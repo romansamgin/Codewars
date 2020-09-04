@@ -7,7 +7,7 @@ using std::vector;
 const long double eps = 10e-16;
 
 bool is_square(int i, int j) {
-    double d = sqrt(i + j);
+    long double d = sqrt(i + j);
     int t = sqrt(i + j);
     return (d - t) < eps;
 }
