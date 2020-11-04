@@ -1,3 +1,3 @@
-# codewars
+# Codewars
 
-My profile - https://www.codewars.com/users/spprssr
+This site was built using [GitHub Pages](https://www.codewars.com/users/spprssr)
