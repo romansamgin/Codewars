@@ -1,4 +1,7 @@
-#include <vector>
+////////////////////////////////////////////////////////
+//https://www.codewars.com/kata/5a667236145c462103000091
+
+include <vector>
 #include <cmath>
 #include <numeric>
 
