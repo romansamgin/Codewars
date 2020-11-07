@@ -1,7 +1,7 @@
 #include <cmath>
 using namespace std;
 
-long double countDivisors(const long& n) 
+long double countDivisors(int n) 
 {
     long double sum = 0;
     long double sq = int(sqrt(n));
