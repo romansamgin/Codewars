@@ -3,11 +3,11 @@
 
 using namespace std;
 
-int last_digit(const std::string &str1, const std::string &str2) {
+int last_digit(const string &str1, const string &str2) {
   
   if ((str1 == "0" || (str1 != "0")) && (str2 == "0")) return 1;
   
-  int last2_str2(0);
+  int last2_str2 = 0;
   if (str2.size() >= 2)
   {
       last2_str2 = (*(str2.end() - 2) - '0') * 10 + *(str2.end() - 1) - '0'; 
