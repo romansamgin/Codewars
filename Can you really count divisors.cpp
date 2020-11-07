@@ -1,3 +1,6 @@
+/////////////////////////////////////////////////////
+//https://www.codewars.com/kata/58b16300a470d47498000811
+
 #include <cmath>
 using namespace std;
 
