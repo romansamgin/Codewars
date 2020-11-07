@@ -4,7 +4,7 @@
 
 using namespace std;
 
-bool validate_battlefield(vector< vector<int> > field) {
+bool validate_battlefield(const vector<vector<int>>& field) {
     int count = 0;
     for (auto& vec : field) {
         count += accumulate(vec.begin(), vec.end(), 0);
