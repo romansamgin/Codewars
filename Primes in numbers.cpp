@@ -7,11 +7,9 @@
 
 using namespace std;
 
-bool isPrime(int n)
-{
+bool isPrime(int n) {
     int i = 2;
-    while (i * i <= n) 
-    {
+    while (i * i <= n) {
         if (!(n % i))
             return false;
         i++;
@@ -20,61 +18,51 @@ bool isPrime(int n)
 }
 
 
-int deg(int n, int p)
-{
-    if (n % p)
+int deg(int n, int p) {
+    if (n % p) {
         return 0;
-    int k(0);
-    while (!(n % p))
-    {
+    }
+    int k = 0;
+    while (!(n % p)) {
         k++;
         n /= p;
     }
     return k;
 }
 
-class PrimeDecomp
-{
+class PrimeDecomp {
 public:
     static std::string factors(int lst);
-
 };
 
-string PrimeDecomp::factors(int lst)
-{
-    if (isPrime(lst))
-        return "(" + to_string(lst) + ")";
-    vector<pair<int, int>>v{};    
-    if (!(lst % 2))
-    {             
-        v.push_back(make_pair(2, deg(lst, 2)));       
+string PrimeDecomp::factors(int lst) {
+    if (isPrime(lst)) {
+        return '(' + to_string(lst) + ')';
+    }
+    vector<pair<int, int>>v;    
+    if (!(lst % 2)) {             
+        v.push_back({2, deg(lst, 2)});       
     }      
     vector<int>ans{};
-    for(int i = 3; i < lst/2+1; i+=2)
-    {
+    for(int i = 3; i < lst / 2 + 1; i += 2) {
         if (!(lst % i))
             ans.push_back(i);
     }
       
-    for (auto i : ans)
-    {                
-        if (isPrime(i))
-        {
-            v.push_back(make_pair(i, deg(lst, i)));
+    for (auto i : ans) {                
+        if (isPrime(i)) {
+            v.push_back({i, deg(lst, i)});
         }          
     }
 
-    string s = "";
-    for (auto temp : v)
-    {
-        if (temp.second == 1)
-        {
-            s += "(" + to_string(temp.first) + ")";
+    string res = "";
+    for (const auto& temp : v) {
+        if (temp.second == 1) {
+            res += '(' + to_string(temp.first) + ')';
         }
-        else
-        {
-            s += "(" + to_string(temp.first) + "**" + to_string(temp.second) + ")";
+        else {
+            res += '(' + to_string(temp.first) + "**" + to_string(temp.second) + ')';
         }
     }
-    return s;
+    return res;
 }
