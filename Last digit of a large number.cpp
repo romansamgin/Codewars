@@ -6,8 +6,7 @@
 
 using namespace std;
 
-int last_digit(const string &str1, const string &str2) {
-  
+int last_digit(const string &str1, const string &str2) {  
   if ((str1 == "0" || (str1 != "0")) && (str2 == "0")) {
       return 1;
   }
